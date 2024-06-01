@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LivrosControler;
 use Faker\Guesser\Name;
 use Illuminate\Support\Facades\Route;
 
@@ -27,10 +28,8 @@ use Illuminate\Support\Facades\Route;
   //  return view('livros',['idLivros'=>$id,'nomeLivros'=>$name]);
 //})->where(['id','[0-9]+','name'=> '[a-z]+']);
 
-Route::get('/livros',function(){
-    return  view('livros');
-});
-
+Route::get('/livros',[LivrosControler::class,'index']);
+    
  Route::get('/home', function () {
      return view('welcome');
  })->name('home-index');
