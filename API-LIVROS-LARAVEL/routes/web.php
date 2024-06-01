@@ -34,6 +34,8 @@ use Illuminate\Support\Facades\Route;
     Route::get('/',[LivrosControler::class,'index'])->name('livros-index');
     Route::get('/create',[LivrosControler::class,'create'])->name('livros-create');    
     Route::post('/',[LivrosControler::class,'store'])->name('livros-store');
+    Route::get('/{id}/edit',[LivrosControler::class,'edit'])-> where('id','[0-9]+')->name('livros-edit');
+    Route::put('/{id}',[LivrosControler::class,'update'])-> where('id','[0-9]+')->name('livros-update');
  });
 
 Route::fallback(function(){
