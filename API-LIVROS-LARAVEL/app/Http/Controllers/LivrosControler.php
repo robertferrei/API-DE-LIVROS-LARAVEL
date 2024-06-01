@@ -43,6 +43,10 @@ class LivrosControler extends Controller
         ];
         Livro::where('id',$id)->update($data);
         return redirect() ->route('livros-index');
-    }     
+    }
+    public function destroy($id){
+        Livro::where('id',$id)->delete();
+        return redirect() ->route('livros-index');
+    }
      //
 }
