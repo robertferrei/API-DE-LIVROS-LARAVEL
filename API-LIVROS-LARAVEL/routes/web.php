@@ -28,15 +28,15 @@ use Illuminate\Support\Facades\Route;
   //  return view('livros',['idLivros'=>$id,'nomeLivros'=>$name]);
 //})->where(['id','[0-9]+','name'=> '[a-z]+']);
 
-Route::get('/livros',[LivrosControler::class,'index']);
-    
- Route::get('/home', function () {
-     return view('welcome');
- })->name('home-index');
-
-
- //caso de erro de encontrar erro
- Route::fallback(function(){
-    return "erro ao localizar a rota";
+ 
+ //criando um grupo de rotas de livros
+ Route::prefix('livros')->group(function(){
+    Route::get('/',[LivrosControler::class,'index'])->name('livros-index');
+    Route::get('/create',[LivrosControler::class,'create'])->name('livros-create');    
+    Route::post('/',[LivrosControler::class,'store'])->name('livros-store');
  });
+
+Route::fallback(function(){
+    return "erro!";
+});
 
