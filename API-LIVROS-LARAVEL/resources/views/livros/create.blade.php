@@ -10,22 +10,22 @@
         @csrf
         <div class="form-group">
             <div class="form-group">
-                <label for="nome">Nome:</label>
+                <label for="nome">Nome: *(obrigatório)</label>
                 <input type="text" class="form-control" name="nome" placeholder="Digite um livro">
             </div>
             <br>
             <div class="form-group">
-                <label for="categoria">Categoria:</label>
+                <label for="categoria">Categoria: *(obrigatório)</label>
                 <input type="text" class="form-control" name="categoria" placeholder="Digite uma categoria do livro">
             </div>
             <br>
             <div class="form-group">
-                <label for="ano_criacao">Ano de criação:</label>
+                <label for="ano_criacao">Ano de criação *(obrigatório):</label>
                 <input type="number" class="form-control" name="ano_criacao" placeholder="Ano do livro">
             </div>
             <br>
             <div class="form-group">
-                <label for="valor">Valor do livro:</label>
+                <label for="valor">Valor do livro: *(obrigatório)</label>
                 <input type="number" class="form-control" name="valor" placeholder="Digite o valor do livro">
             </div>
             <br>

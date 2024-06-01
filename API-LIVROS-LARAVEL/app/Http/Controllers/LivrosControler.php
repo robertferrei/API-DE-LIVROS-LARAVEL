@@ -13,13 +13,20 @@ class LivrosControler extends Controller
         return view('livros.index',['livros'=>$livros]);
     }
 
-    public function create(){
-        return view('livros.create');
+    public function create(){       
+            return view('livros.create');       
     }
 
     public function store(Request  $request){
       Livro::create($request->all()); 
-      return redirect()->route('livros-index');
+      
+      if(!empty($request)){
+        return redirect()->route('livros-index');
+      }
+      else{
+        return redirect()->route('livros-index');
+      }
+      
     }
 
     public function edit($id){
@@ -32,7 +39,6 @@ class LivrosControler extends Controller
             return redirect()->route('livros-index');
         }
     }
-
 
     public function update(Request $request, $id){
         $data =[
@@ -48,5 +54,5 @@ class LivrosControler extends Controller
         Livro::where('id',$id)->delete();
         return redirect() ->route('livros-index');
     }
-     //
+   //
 }

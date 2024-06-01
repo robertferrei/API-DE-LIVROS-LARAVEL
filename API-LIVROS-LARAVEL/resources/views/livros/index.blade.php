@@ -16,13 +16,11 @@
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">#</th>
+                <th scope="col">#id</th>
                 <th scope="col">Nome</th>
                 <th scope="col">Categoria</th>
                 <th scope="col">Ano criação</th>
                 <th scope="col">Valor</th>
-
-
             </tr>
         </thead>
         <tbody>
