@@ -18,16 +18,9 @@ class LivrosControler extends Controller
     }
 
     public function store(Request  $request){
-      Livro::create($request->all()); 
-      
-      if(!empty($request)){
+      Livro::create($request->all());     
         return redirect()->route('livros-index');
-      }
-      else{
-        return redirect()->route('livros-index');
-      }
-      
-    }
+    }    
 
     public function edit($id){
         $livros = Livro::where('id',$id)->first();  //first para pegar o primeiro resultado
@@ -39,20 +32,21 @@ class LivrosControler extends Controller
             return redirect()->route('livros-index');
         }
     }
-
     public function update(Request $request, $id){
+     
         $data =[
             'nome' => $request ->nome,
-            'nome' => $request ->categoria,
-            'nome' => $request ->ano_criacao,
-            'nome' => $request ->valor,
+            'categoria' => $request ->categoria,
+            'ano_criacao' => $request ->ano_criacao,
+            'valor' => $request ->valor,
         ];
         Livro::where('id',$id)->update($data);
-        return redirect() ->route('livros-index');
+        return redirect()->route('livros-index');
     }
+
     public function destroy($id){
         Livro::where('id',$id)->delete();
-        return redirect() ->route('livros-index');
+        return redirect()->route('livros-index');
     }
    //
 }

@@ -16,6 +16,7 @@
     <table class="table">
         <thead>
             <tr>
+                
                 <th scope="col">#id</th>
                 <th scope="col">Nome</th>
                 <th scope="col">Categoria</th>
@@ -25,6 +26,7 @@
         </thead>
         <tbody>
             @foreach($livros as $livro)
+             $livro
             <tr>
                 <th>{{$livro->id}}</th>
                 <th>{{$livro->nome}}</th>
